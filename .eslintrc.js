@@ -34,5 +34,9 @@ module.exports = {
     'arrow-body-style': 'off',
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/semi': 'off',
+    'no-console': 'off',
+    'import/no-cycle': 'off'
   },
 };
