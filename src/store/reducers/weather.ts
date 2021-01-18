@@ -2,24 +2,30 @@ import { createSlice } from '@reduxjs/toolkit';
 import { Loading } from '../../model/loading';
 import { fetchWeather } from '../effects/weather';
 import { Weather } from '../../model/weather';
-import { Temperature } from '../../model/temperature';
+import { TemperatureType } from '../../model/temperature-type';
 
 interface InitialState {
   weathers: Weather[];
   loadingWeathers: Loading;
-  temperature: Temperature
+  temperature: TemperatureType
 }
 
 const initialState: InitialState = {
   weathers: [],
   loadingWeathers: Loading.idle,
-  temperature: Temperature.celsius,
+  temperature: TemperatureType.celsius,
 };
 
 const weather = createSlice({
   name: 'weather',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleTemperature(state) {
+      state.temperature = state.temperature === TemperatureType.celsius
+        ? TemperatureType.fahrenheit
+        : TemperatureType.celsius;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchWeather.fulfilled, (state, action) => {
@@ -32,6 +38,8 @@ const weather = createSlice({
   }
 });
 
-const { reducer } = weather;
+const { reducer, actions } = weather;
+
+export const { toggleTemperature } = actions
 
 export default reducer;
