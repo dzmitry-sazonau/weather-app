@@ -17,5 +17,9 @@ export const theme: DefaultTheme = {
     sidebar: '#88869D',
     slider: '#FFEC65',
   },
-  mainFontWeight: 500,
+  fontWeight: {
+    main: 500,
+    bold: 700,
+    second: 400,
+  }
 };

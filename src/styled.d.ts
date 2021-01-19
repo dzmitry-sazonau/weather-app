@@ -18,10 +18,16 @@ interface IColor {
   slider: string;
 }
 
+interface IFontWeight {
+  main: number;
+  bold: number;
+  second: number;
+}
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     bg: IBg,
     color: IColor,
-    mainFontWeight: number;
+    fontWeight: IFontWeight;
   }
 }
