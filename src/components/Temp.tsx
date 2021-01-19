@@ -26,13 +26,13 @@ const StyledTemp = styled.div<StyledTempProps>`
   border-radius: 54px;
   cursor: pointer;
   margin-left: ${({ isFirst }) => !isFirst && '12px'};
-  ${({ isActive }) => isActive
+  ${({ isActive, theme }) => isActive
     ? css`
-      background: #E7E7EB;
-      color: #110E3C;
+      background: ${theme.color.main};
+      color: ${theme.color.second};
     ` : css`
-      background: #585676;
-      color: #E7E7EB;
+      background: ${theme.bg.third};
+      color: ${theme.color.main};
     `}
 `;
 

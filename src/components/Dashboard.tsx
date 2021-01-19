@@ -9,7 +9,7 @@ const StyledDashboard = styled.div`
   height: 100%;
   width: 100%;
   padding: 50px 150px;
-  background: #100E1D;
+  background: ${({ theme }) => theme.bg.main};
 `;
 
 const StyledWrap = styled.div`

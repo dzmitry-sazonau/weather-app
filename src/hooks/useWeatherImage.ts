@@ -1,15 +1,15 @@
 import { SetStateAction, useEffect, useState } from 'react';
 import { WeatherState } from '../model/weatherState';
-import snow from '../assets/weathers/sn.png'
-import sleet from '../assets/weathers/sl.png'
-import hail from '../assets/weathers/h.png'
-import thunderstorm from '../assets/weathers/t.png'
-import heavyRain from '../assets/weathers/hr.png'
-import lightRain from '../assets/weathers/lr.png'
-import showers from '../assets/weathers/s.png'
-import heavyCloud from '../assets/weathers/hc.png'
-import lightCloud from '../assets/weathers/lc.png'
-import clear from '../assets/weathers/c.png'
+import snow from '../assets/weathers/snow.png'
+import sleet from '../assets/weathers/sleet.png'
+import hail from '../assets/weathers/hail.png'
+import thunderstorm from '../assets/weathers/thunderstorm.png'
+import heavyRain from '../assets/weathers/heavyRain.png'
+import lightRain from '../assets/weathers/lightRain.png'
+import showers from '../assets/weathers/showers.png'
+import heavyCloud from '../assets/weathers/heavyCloud.png'
+import lightCloud from '../assets/weathers/lightCloud.png'
+import clear from '../assets/weathers/clear.png'
 
 function useWeatherImage(state: WeatherState): SetStateAction<any> {
   const [url, setUrl] = useState<SetStateAction<any>>();

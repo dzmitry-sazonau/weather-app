@@ -26,7 +26,7 @@ const StyledCard = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 18px 22px;
-  background: #1E213A;
+  background: ${(props) => props.theme.bg.card};
 `;
 
 const StyledDate = styled.div`

@@ -6,7 +6,7 @@ const Wrap = styled.div`
   flex-direction: column;
   height: 100%;
   width: 450px;
-  background: #1E213A;
+  background: ${({ theme }) => theme.bg.card};
 `;
 
 export const Sidebar = (): JSX.Element => {
