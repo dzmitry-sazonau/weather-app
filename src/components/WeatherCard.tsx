@@ -47,7 +47,7 @@ const StyledWrapTemp = styled.div`
 const StyledTemp = styled.div<StyledTempProps>`
   font-size: 16px;
   line-height: 19px;
-  color: ${(props) => (props.second ? '#A09FB1' : '#E7E7EB')}
+  color: ${({ second, theme }) => (second ? theme.color.third : theme.color.main)}
 `;
 
 export const WeatherCard = ({
@@ -58,9 +58,6 @@ export const WeatherCard = ({
   const [url] = useWeatherImage(weatherState);
   const [formattedMaxTemp] = useTemperature(maxTemp, activeTempType);
   const [formattedMinTemp] = useTemperature(minTemp, activeTempType);
-
-  console.log(formattedMaxTemp)
-  console.log(formattedMinTemp)
 
   return (
     <StyledCard>

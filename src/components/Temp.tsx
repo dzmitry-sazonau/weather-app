@@ -28,7 +28,7 @@ const StyledTemp = styled.div<StyledTempProps>`
   margin-left: ${({ isFirst }) => !isFirst && '12px'};
   ${({ isActive, theme }) => isActive
     ? css`
-      background: ${theme.color.main};
+      background: ${theme.bg.second};
       color: ${theme.color.second};
     ` : css`
       background: ${theme.bg.third};
