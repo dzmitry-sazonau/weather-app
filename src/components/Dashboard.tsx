@@ -2,18 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { TempList } from './TempList';
 import { WeatherListCard } from './WeatherListCard';
+import { HighlightListCard } from './HighlightListCard';
 
 const StyledDashboard = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 50px 150px;
+  padding: 50px 120px;
   background: ${({ theme }) => theme.bg.main};
 `;
 
 const StyledWrap = styled.div`
-  margin-top: 65px;
+  margin-top: 25px;
+`
+
+const StyledFooter = styled.div`
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: ${({ theme }) => theme.color.fourth}
 `
 
 export const Dashboard = (): JSX.Element => {
@@ -24,6 +33,10 @@ export const Dashboard = (): JSX.Element => {
       <StyledWrap>
         <WeatherListCard />
       </StyledWrap>
+
+      <HighlightListCard />
+
+      <StyledFooter>Dzmitry Sazonov @ DevChallenges.io</StyledFooter>
     </StyledDashboard>
   )
 }
