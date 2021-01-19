@@ -5,7 +5,7 @@ import useDate from '../hooks/useDate';
 import useTemperature from '../hooks/useTemperature';
 import useWeatherImage from '../hooks/useWeatherImage';
 import { WeatherState } from '../model/weatherState';
-import { RootState } from '../store/configure-store';
+import { getActiveTemp } from '../store/selectors/weather';
 
 interface StyledTempProps {
   second?: boolean;
@@ -53,7 +53,7 @@ const StyledTemp = styled.div<StyledTempProps>`
 export const WeatherCard = ({
   maxTemp, minTemp, date, weatherState
 }: WeatherCardProps): JSX.Element => {
-  const activeTempType = useSelector((state: RootState) => state.weatherSlice.temperature);
+  const activeTempType = useSelector(getActiveTemp);
   const [formattedDate] = useDate(date);
   const [url] = useWeatherImage(weatherState);
   const [formattedMaxTemp] = useTemperature(maxTemp, activeTempType);

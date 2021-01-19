@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
 import { toggleTemperature } from '../store/reducers/weather'
 import { Temperature } from '../model/Temperature';
-import { RootState } from '../store/configure-store';
+import { getActiveTemp } from '../store/selectors/weather';
 
 interface StyledTempProps {
   isActive: boolean;
@@ -38,7 +38,7 @@ const StyledTemp = styled.div<StyledTempProps>`
 
 export const Temp = ({ label, type, isFirst }: TempProps): JSX.Element => {
   const dispatch = useDispatch();
-  const activeTemp = useSelector((state: RootState) => state.weatherSlice.temperature);
+  const activeTemp = useSelector(getActiveTemp);
 
   return (
     <StyledTemp
