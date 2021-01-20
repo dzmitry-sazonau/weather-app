@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Loading } from '../../model/loading';
 import { City } from '../../model/city';
-import { getItem, setItem } from '../../utils';
 import { fetchCity } from '../effects/city'
 
 interface InitialState {
@@ -9,9 +8,6 @@ interface InitialState {
   activeCity: City;
   loadingCity: Loading;
 }
-
-// const KeyForCities = 'cities'
-// const KeyForActiveCity = 'cities'
 
 const initialState: InitialState = {
   cities: [
@@ -53,7 +49,5 @@ const city = createSlice({
 })
 
 const { reducer } = city;
-
-// export const { getCities, saveCities } = actions
 
 export default reducer;

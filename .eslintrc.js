@@ -37,6 +37,8 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/semi': 'off',
     'no-console': 'off',
-    'import/no-cycle': 'off'
+    'import/no-cycle': 'off',
+    'no-confusing-arrow': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
 };
