@@ -10,15 +10,16 @@ const Wrap = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 25px;
 `
 
 const StyledListCard = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto; 
+  column-gap: 25px;
+  row-gap: 25px;
+  margin-top: 25px;
 `;
 
 const StyledTitle = styled.div`

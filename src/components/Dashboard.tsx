@@ -9,7 +9,7 @@ const StyledDashboard = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 50px 120px;
+  padding: 30px 120px;
   background: ${({ theme }) => theme.bg.main};
 `;
 
@@ -22,7 +22,8 @@ const StyledFooter = styled.div`
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
-  color: ${({ theme }) => theme.color.fourth}
+  color: ${({ theme }) => theme.color.fourth};
+  margin-top: 25px;
 `
 
 export const Dashboard = (): JSX.Element => {

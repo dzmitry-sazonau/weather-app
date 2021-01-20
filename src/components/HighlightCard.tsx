@@ -14,9 +14,8 @@ interface StyledCardProps {
 
 const StyledCard = styled.div<StyledCardProps>`
   height: ${(props) => props.default ? '160px' : '204px'};
-  width: 370px;
+  width: 360px;
   background: ${({ theme }) => theme.bg.card};
-  margin-top: 30px;
   padding: 22px;
   display: flex;
   flex-direction: column;
