@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import useDate from '../hooks/useDate';
-import useTemperature from '../hooks/useTemperature';
-import useWeatherImage from '../hooks/useWeatherImage';
-import { WeatherState } from '../model/weatherState';
-import { getActiveTemp } from '../store/selectors/weather';
+import useDate from '../../hooks/useDate';
+import useTemperature from '../../hooks/useTemperature';
+import useWeatherImage from '../../hooks/useWeatherImage';
+import { WeatherState } from '../../model/weatherState';
+import { getActiveTemp } from '../../store/selectors/weather';
 
 interface StyledTempProps {
   second?: boolean;

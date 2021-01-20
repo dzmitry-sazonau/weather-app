@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { temperatures } from '../utils';
+import { temperatures } from '../../utils';
 import { Temp } from './Temp';
 
 const StyledTempList = styled.div`
