@@ -1,5 +1,5 @@
 import { SetStateAction, useEffect, useState } from 'react';
-import { WeatherState } from '../model/weatherState';
+import { WeatherState } from '../model/weather-state';
 import snow from '../assets/weathers/snow.png'
 import sleet from '../assets/weathers/sleet.png'
 import hail from '../assets/weathers/hail.png'

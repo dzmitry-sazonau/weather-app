@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import useDate from '../../hooks/useDate';
 import useTemperature from '../../hooks/useTemperature';
 import useWeatherImage from '../../hooks/useWeatherImage';
-import { WeatherState } from '../../model/weatherState';
+import { WeatherState } from '../../model/weather-state';
 import { getActiveTemp } from '../../store/selectors/weather';
 
 interface StyledTempProps {

@@ -1,4 +1,4 @@
-import { Temperature } from './model/Temperature';
+import { Temperature } from './model/temperature';
 import { TemperatureType } from './model/temperature-type';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

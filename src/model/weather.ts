@@ -1,5 +1,5 @@
 import { City } from './city';
-import { WeatherState } from './weatherState';
+import { WeatherState } from './weather-state';
 
 export interface Weather {
   id: number;

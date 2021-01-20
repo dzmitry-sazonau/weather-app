@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Highlight, HighlightType } from '../../model/highlight';
 import { Sidebar } from '../Sidebar/Sidebar';
-import { Slider } from '../shared/Slider';
+import { Slider } from '../_shared/Slider';
 
 interface HighlightCardProps {
   highlight: Highlight;
