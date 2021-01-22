@@ -11,7 +11,7 @@ const StyledSidebar = styled.div`
   flex-direction: column;
   height: 100%;
   min-width: 460px;
-  background: ${({ theme }) => theme.bg.card};
+  background: ${({ theme }) => theme.color.black_3};
 `;
 
 export const Sidebar = (): JSX.Element => {

@@ -11,6 +11,9 @@ const Wrap = styled.div`
 `
 
 export default (): JSX.Element => {
+  // navigator.geolocation.getCurrentPosition((a) => {
+  //   console.log(a)
+  // });
   return (
     <Wrap>
       <Sidebar />

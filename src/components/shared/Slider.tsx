@@ -23,7 +23,7 @@ const StyledPositions = styled.div`
 
 const StyledText = styled.div`
   line-height: 14px;
-  color:  ${(props) => props.theme.color.fourth};
+  color:  ${(props) => props.theme.color.gray_4};
 `
 
 const StyledProgressBar = styled.div`
@@ -32,7 +32,7 @@ const StyledProgressBar = styled.div`
   height: 8px;
   border-radius: 80px;
   margin: 8px 0;
-  background: ${({ theme }) => theme.color.main};
+  background: ${({ theme }) => theme.color.white};
 `
 
 const StyledProgress = styled.div<StyledProgressProps>`
@@ -40,7 +40,7 @@ const StyledProgress = styled.div<StyledProgressProps>`
   width: ${({ percent }) => percent};
   height: 8px;
   border-radius: 80px;
-  background: ${({ theme }) => theme.color.slider};
+  background: ${({ theme }) => theme.color.yellow};
 `
 
 const StyledPercent = styled.div`

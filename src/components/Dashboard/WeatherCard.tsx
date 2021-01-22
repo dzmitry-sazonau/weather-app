@@ -26,7 +26,7 @@ const StyledCard = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 18px 22px;
-  background: ${(props) => props.theme.bg.card};
+  background: ${(props) => props.theme.color.black_3};
 `;
 
 const StyledDate = styled.div`
@@ -47,25 +47,25 @@ const StyledWrapTemp = styled.div`
 const StyledTemp = styled.div<StyledTempProps>`
   font-size: 16px;
   line-height: 19px;
-  color: ${({ second, theme }) => (second ? theme.color.third : theme.color.main)}
+  color: ${({ second, theme }) => (second ? theme.color.gray_1 : theme.color.white)}
 `;
 
 export const WeatherCard = ({
   maxTemp, minTemp, date, weatherState
 }: WeatherCardProps): JSX.Element => {
   const activeTempType = useSelector(getActiveTemp);
-  const [formattedDate] = useDate(date);
-  const [url] = useWeatherImage(weatherState);
-  const [formattedMaxTemp] = useTemperature(maxTemp, activeTempType);
-  const [formattedMinTemp] = useTemperature(minTemp, activeTempType);
+  const formattedDate = useDate(date);
+  const url = useWeatherImage(weatherState);
+  const [,,formattedMaxTempWithUnit] = useTemperature(maxTemp, activeTempType);
+  const [,,formattedMinTempWithUnit] = useTemperature(minTemp, activeTempType);
 
   return (
     <StyledCard>
       <StyledDate>{formattedDate}</StyledDate>
       <StyledImage src={url} />
       <StyledWrapTemp>
-        <StyledTemp>{formattedMaxTemp}</StyledTemp>
-        <StyledTemp second>{formattedMinTemp}</StyledTemp>
+        <StyledTemp>{formattedMaxTempWithUnit}</StyledTemp>
+        <StyledTemp second>{formattedMinTempWithUnit}</StyledTemp>
       </StyledWrapTemp>
     </StyledCard>
   )

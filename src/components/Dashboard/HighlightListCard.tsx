@@ -30,7 +30,7 @@ const StyledTitle = styled.div`
 
 export const HighlightListCard = (): JSX.Element => {
   const activeWeather = useSelector(getActiveWeather);
-  const [highlights] = useHighlight(activeWeather);
+  const highlights = useHighlight(activeWeather);
 
   return (
     <Wrap>

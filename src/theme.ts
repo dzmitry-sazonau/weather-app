@@ -1,25 +1,22 @@
 import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
-  bg: {
-    main: '#100E1D',
-    second: '#E7E7EB',
-    third: '#585676',
-    card: '#1E213A',
-    blueBtn: '#3C47E9',
-    grayBtn: '#6E707A',
-  },
   color: {
-    main: '#E7E7EB',
-    second: '#110E3C',
-    third: '#A09FB1',
-    fourth: '#616475',
-    sidebar: '#88869D',
-    slider: '#FFEC65',
+    black_1: '#100E1D',
+    black_2: '#110E3C',
+    black_3: '#1E213A',
+    gray_1: '#A09FB1',
+    gray_2: '#88869D',
+    gray_3: '#6E707A',
+    gray_4: '#616475',
+    gray_5: '#585676',
+    white: '#E7E7EB',
+    blue: '#3C47E9',
+    yellow: '#FFEC65'
   },
   fontWeight: {
-    main: 500,
     bold: 700,
-    second: 400,
+    medium: 500,
+    regular: 400,
   }
 };
