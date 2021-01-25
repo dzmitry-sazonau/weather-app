@@ -49,7 +49,7 @@ const StyledPercent = styled.div`
   justify-content: flex-end;
 `
 
-export const Slider = ({ percent }: SliderProps): JSX.Element => {
+export const Slider = React.memo(({ percent }: SliderProps): JSX.Element => {
   return (
     <StyledSlider>
       <StyledPositions>
@@ -67,4 +67,4 @@ export const Slider = ({ percent }: SliderProps): JSX.Element => {
       </StyledPercent>
     </StyledSlider>
   )
-}
+})
