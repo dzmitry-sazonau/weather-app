@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { LocationIcon } from './icon/LocationIcon';
+import { Location } from './icon/Location';
 
 interface LocationButtonProps {
   handle: () => void
@@ -17,7 +17,7 @@ const StyledLocationButton = styled.button`
 export const LocationButton = ({ handle }: LocationButtonProps): JSX.Element => {
   return (
     <StyledLocationButton onClick={handle}>
-      <LocationIcon />
+      <Location />
     </StyledLocationButton>
   )
 };

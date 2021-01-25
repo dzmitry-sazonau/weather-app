@@ -7,11 +7,11 @@ import { getActiveTemp } from '../../store/selectors/weather';
 
 interface StyledTempProps {
   isActive: boolean;
-  isFirst: boolean;
+  withoutOffset: boolean;
 }
 
 interface TempProps extends Temperature {
-  isFirst: boolean;
+  withoutOffset: boolean;
 }
 
 const StyledTemp = styled.div<StyledTempProps>`
@@ -25,7 +25,7 @@ const StyledTemp = styled.div<StyledTempProps>`
   line-height: 21px;
   border-radius: 54px;
   cursor: pointer;
-  margin-left: ${({ isFirst }) => !isFirst && '12px'};
+  margin-left: ${({ withoutOffset }) => !withoutOffset && '12px'};
   ${({ isActive, theme }) => isActive
     ? css`
       background: ${theme.color.white};
@@ -36,13 +36,13 @@ const StyledTemp = styled.div<StyledTempProps>`
     `}
 `;
 
-export const Temp = ({ label, type, isFirst }: TempProps): JSX.Element => {
+export const Temp = ({ label, type, withoutOffset }: TempProps): JSX.Element => {
   const dispatch = useDispatch();
   const activeTemp = useSelector(getActiveTemp);
 
   return (
     <StyledTemp
-      isFirst={isFirst}
+      withoutOffset={withoutOffset}
       isActive={activeTemp === type}
       onClick={() => activeTemp !== type && dispatch(toggleTemperature())}
     >

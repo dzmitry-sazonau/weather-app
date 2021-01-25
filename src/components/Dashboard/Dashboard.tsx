@@ -10,7 +10,7 @@ const StyledDashboard = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 30px 120px;
+  padding: 30px 110px;
   background: ${({ theme }) => theme.color.black_1};
 `;
 

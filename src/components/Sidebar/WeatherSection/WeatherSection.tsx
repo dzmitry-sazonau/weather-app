@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import cloudBg from '../../assets/image/cloud-background.png'
-import { getActiveWeather } from '../../store/selectors/weather';
-import useWeatherImage from '../../hooks/useWeatherImage';
-import { WeatherSectionHeader } from './WeatherSectionHeader';
-import { WeatherSectionBody } from './WeatherSectionBody';
+import cloudBg from '../../../assets/image/cloud-background.png'
+import { getActiveWeather } from '../../../store/selectors/weather';
+import useWeatherImage from '../../../hooks/useWeatherImage';
+import { Header } from './Header';
+import { Body } from './Body';
 
 const StyledWeatherSection = styled.div`
   width: 100%;
@@ -36,14 +36,14 @@ export const WeatherSection = (): JSX.Element => {
 
   return (
     <StyledWeatherSection>
-      <WeatherSectionHeader />
+      <Header />
 
       <StyledWeatherStateWrap>
         <StyledCloudBackground />
         <StyledImage src={url} />
       </StyledWeatherStateWrap>
 
-      <WeatherSectionBody />
+      <Body />
     </StyledWeatherSection>
   )
 }

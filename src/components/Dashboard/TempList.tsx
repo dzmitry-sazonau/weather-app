@@ -14,7 +14,7 @@ export const TempList = (): JSX.Element => {
   return (
     <StyledTempList>
       {temperatures.map(({ label, type }, index) => (
-        <Temp key={type} label={label} type={type} isFirst={!index} />
+        <Temp key={type} label={label} type={type} withoutOffset={!index} />
       ))}
     </StyledTempList>
   )

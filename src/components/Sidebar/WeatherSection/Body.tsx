@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { getActiveTemp, getActiveWeather } from '../../store/selectors/weather';
-import useCircumstanceOfTime from '../../hooks/useСircumstanceOfTime';
-import useTemperature from '../../hooks/useTemperature';
-import useFormattedDate from '../../hooks/useFormattedDate';
-import { getActiveCity } from '../../store/selectors/city';
-import { PinIcon } from '../shared/icon/PinIcon';
+import { getActiveTemp, getActiveWeather } from '../../../store/selectors/weather';
+import useCircumstanceOfTime from '../../../hooks/useСircumstanceOfTime';
+import useTemperature from '../../../hooks/useTemperature';
+import useFormattedDate from '../../../hooks/useFormattedDate';
+import { getActiveCity } from '../../../store/selectors/city';
+import { Pin } from '../../shared/icon/Pin';
 
 const StyledBody = styled.div`
   width: 100%;
@@ -59,7 +59,7 @@ const StyledCity = styled.div`
   color: ${({ theme }) => theme.color.gray_2};
 `;
 
-export const WeatherSectionBody = (): JSX.Element => {
+export const Body = (): JSX.Element => {
   const activeWeather = useSelector(getActiveWeather);
   const activeTemperature = useSelector(getActiveTemp);
   const activeCity = useSelector(getActiveCity)
@@ -80,8 +80,8 @@ export const WeatherSectionBody = (): JSX.Element => {
       <StyledDate>{`${day} • ${formattedDate}`}</StyledDate>
 
       <StyledCity>
-        <PinIcon />
-        {activeCity?.title}
+        <Pin />
+        {activeCity.title}
       </StyledCity>
     </StyledBody>
   )

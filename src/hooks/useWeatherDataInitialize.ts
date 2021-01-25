@@ -4,7 +4,7 @@ import { fetchWeather } from '../store/effects/weather';
 import { fetchCity } from '../store/effects/city';
 import { getWeatherLoader } from '../store/selectors/weather';
 import { Loading } from '../model/loading';
-import { getCityLoader, getCurrentLattlong } from '../store/selectors/city';
+import { getActiveCity, getCityLoader, getCurrentLattlong } from '../store/selectors/city';
 import useLocation from './useLocation';
 
 export default function useWeatherDataInitialize(): boolean {
@@ -12,13 +12,14 @@ export default function useWeatherDataInitialize(): boolean {
   const dispatch = useDispatch();
   const weatherLoader = useSelector(getWeatherLoader);
   const cityLoader = useSelector(getCityLoader);
+  const activeCity = useSelector(getActiveCity);
   const lattlong = useSelector(getCurrentLattlong);
 
   useEffect(() => {
     if (cityLoader === Loading.succeeded) {
       dispatch(fetchWeather())
     }
-  }, [dispatch, cityLoader]);
+  }, [dispatch, cityLoader, activeCity]);
 
   useEffect(() => {
     if (lattlong) {

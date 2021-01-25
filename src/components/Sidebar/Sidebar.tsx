@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { WeatherSection } from './WeatherSection';
-import { CitiesSection } from './CitiesSection';
+import { WeatherSection } from './WeatherSection/WeatherSection';
+import { CitiesSection } from './CitiesSection/CitiesSection';
 import { getActiveSidebarCondition } from '../../store/selectors/sidebar';
 import { SidebarCondition } from '../../model/sidebar-сondition';
 

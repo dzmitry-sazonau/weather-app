@@ -23,6 +23,9 @@ const city = createSlice({
   reducers: {
     setLocation(state, action: PayloadAction<string>) {
       state.currentLattlong = action.payload
+    },
+    setActiveCity(state, action: PayloadAction<City['woeid']>) {
+      state.activeCity = state.cities.find((item) => item.woeid === action.payload) || {} as City;
     }
   },
   extraReducers: (builder) => {
@@ -40,6 +43,6 @@ const city = createSlice({
 
 const { reducer, actions } = city;
 
-export const { setLocation } = actions
+export const { setLocation, setActiveCity } = actions
 
 export default reducer;
