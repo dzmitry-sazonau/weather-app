@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import styled from 'styled-components';
 import { TempList } from './TempList';
-import { WeatherListCard } from './WeatherListCard';
-import { HighlightListCard } from './HighlightListCard';
+
+const WeatherListCard = lazy(() => import('./WeatherListCard'));
+const HighlightListCard = lazy(() => import('./HighlightListCard'));
 
 const StyledDashboard = styled.div`
   display: flex;
@@ -31,11 +32,13 @@ export const Dashboard = (): JSX.Element => {
     <StyledDashboard>
       <TempList />
 
-      <StyledWrap>
-        <WeatherListCard />
-      </StyledWrap>
+      <Suspense fallback={<div>Loading...</div>}>
+        <StyledWrap>
+          <WeatherListCard />
+        </StyledWrap>
 
-      <HighlightListCard />
+        <HighlightListCard />
+      </Suspense>
 
       <StyledFooter>Dzmitry Sazonov @ DevChallenges.io</StyledFooter>
     </StyledDashboard>
