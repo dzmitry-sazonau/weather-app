@@ -7,7 +7,7 @@ const Svg = styled(Icon)`
   height: 20px;
 `;
 
-export const PinIcon = (): JSX.Element => {
+export const Pin = (): JSX.Element => {
   const themeContext = useContext(ThemeContext);
 
   return (

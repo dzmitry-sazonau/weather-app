@@ -7,7 +7,7 @@ const Svg = styled(Icon)`
   height: 22px;
 `;
 
-export const LocationIcon = (): JSX.Element => {
+export const Location = (): JSX.Element => {
   const themeContext = useContext(ThemeContext);
 
   return (
