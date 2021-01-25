@@ -10,6 +10,8 @@ export const getItem = (key: string): any => {
   return JSON.parse(<string>localStorage.getItem(key))
 }
 
+export const standardFormatForDate = 'E, d LLL'
+
 export const temperatures: Temperature[] = [
   {
     label: '°C',
