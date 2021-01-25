@@ -28,7 +28,7 @@ const StyledTitle = styled.div`
   line-height: 28px;
 `
 
-export const HighlightListCard = (): JSX.Element => {
+export default function HighlightListCard(): JSX.Element {
   const activeWeather = useSelector(getActiveWeather);
   const highlights = useHighlight(activeWeather);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import useDate from '../../hooks/useDate';
+import useCircumstanceOfTime from '../../hooks/useСircumstanceOfTime';
 import useTemperature from '../../hooks/useTemperature';
 import useWeatherImage from '../../hooks/useWeatherImage';
 import { WeatherState } from '../../model/weather-state';
@@ -54,7 +54,7 @@ export const WeatherCard = ({
   maxTemp, minTemp, date, weatherState
 }: WeatherCardProps): JSX.Element => {
   const activeTempType = useSelector(getActiveTemp);
-  const formattedDate = useDate(date);
+  const formattedDate = useCircumstanceOfTime(date);
   const url = useWeatherImage(weatherState);
   const [,,formattedMaxTempWithUnit] = useTemperature(maxTemp, activeTempType);
   const [,,formattedMinTempWithUnit] = useTemperature(minTemp, activeTempType);
