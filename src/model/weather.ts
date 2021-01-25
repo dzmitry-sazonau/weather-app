@@ -12,6 +12,7 @@ export interface Weather {
   wind_direction_compass: string;
   wind_speed: number;
   weather_state_abbr: WeatherState;
+  weather_state_name: string;
 }
 
 export interface MeteorologicalInformation extends City{

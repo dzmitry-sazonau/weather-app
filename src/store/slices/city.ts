@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Loading } from '../../model/loading';
 import { City } from '../../model/city';
 import { fetchCity } from '../effects/city'
@@ -6,48 +6,40 @@ import { fetchCity } from '../effects/city'
 interface InitialState {
   cities: City[];
   activeCity: City;
-  loadingCity: Loading;
+  cityLoader: Loading;
+  currentLattlong: string;
 }
 
 const initialState: InitialState = {
-  cities: [
-    {
-      title: 'Minsk',
-      woeid: 834463
-    },
-    {
-      title: 'Warsaw',
-      woeid: 523920
-    },
-    {
-      title: 'London',
-      woeid: 44418
-    },
-  ],
-  activeCity: {
-    title: 'Minsk',
-    woeid: 834463
-  },
-  loadingCity: Loading.idle,
+  cities: [],
+  activeCity: {} as City,
+  cityLoader: Loading.idle,
+  currentLattlong: ''
 };
 
 const city = createSlice({
   name: 'city',
   initialState,
-  reducers: {},
+  reducers: {
+    setLocation(state, action: PayloadAction<string>) {
+      state.currentLattlong = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCity.pending, (state) => {
-        state.loadingCity = Loading.pending;
+        state.cityLoader = Loading.pending;
       })
       .addCase(fetchCity.fulfilled, (state, action) => {
-        state.activeCity = action.payload;
-        state.cities.push(action.payload);
-        state.loadingCity = Loading.succeeded;
+        [state.activeCity] = action.payload;
+        state.cities = action.payload;
+        state.cityLoader = Loading.succeeded;
       })
   }
 })
 
-const { reducer } = city;
+const { reducer, actions } = city;
+
+export const { setLocation } = actions
 
 export default reducer;
