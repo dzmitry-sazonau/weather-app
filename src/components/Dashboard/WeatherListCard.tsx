@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { WeatherCard } from './WeatherCard';
-import { fetchWeather } from '../../store/effects/weather';
 import { getWeathersWithoutActive } from '../../store/selectors/weather';
 
 const StyledListCard = styled.div`
@@ -10,13 +9,8 @@ const StyledListCard = styled.div`
   justify-content: space-between;
 `
 
-export const WeatherListCard = (): JSX.Element => {
-  const dispatch = useDispatch();
+export default function WeatherListCard(): JSX.Element {
   const weathers = useSelector(getWeathersWithoutActive);
-
-  useEffect(() => {
-    dispatch(fetchWeather())
-  }, [dispatch]);
 
   return (
     <StyledListCard>

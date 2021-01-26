@@ -4,6 +4,10 @@
   letter-spacing: -0.02em;
 }
 
+*:before, *:after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
@@ -14,4 +18,23 @@ body,
   max-height: 100%;
   font-weight: 500;
   color: #E7E7EB;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #616475;
+  opacity: 1; /* Firefox */
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
 }

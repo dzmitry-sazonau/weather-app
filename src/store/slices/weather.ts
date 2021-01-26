@@ -7,14 +7,14 @@ import { TemperatureType } from '../../model/temperature-type';
 interface InitialState {
   weathers: Weather[];
   activeWeather: Weather,
-  loadingWeathers: Loading;
+  weatherLoader: Loading;
   temperature: TemperatureType
 }
 
 const initialState: InitialState = {
   weathers: [],
   activeWeather: {} as Weather,
-  loadingWeathers: Loading.idle,
+  weatherLoader: Loading.idle,
   temperature: TemperatureType.celsius,
 };
 
@@ -30,13 +30,13 @@ const weather = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchWeather.pending, (state) => {
+        state.weatherLoader = Loading.pending
+      })
       .addCase(fetchWeather.fulfilled, (state, action) => {
         state.weathers = action.payload;
         [state.activeWeather] = action.payload;
-        state.loadingWeathers = Loading.succeeded;
-      })
-      .addCase(fetchWeather.pending, (state) => {
-        state.loadingWeathers = Loading.pending;
+        state.weatherLoader = Loading.succeeded;
       })
   }
 });

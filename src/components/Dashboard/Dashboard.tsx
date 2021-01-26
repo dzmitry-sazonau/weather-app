@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import styled from 'styled-components';
 import { TempList } from './TempList';
-import { WeatherListCard } from './WeatherListCard';
-import { HighlightListCard } from './HighlightListCard';
+
+const WeatherListCard = lazy(() => import('./WeatherListCard'));
+const HighlightListCard = lazy(() => import('./HighlightListCard'));
 
 const StyledDashboard = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 30px 120px;
-  background: ${({ theme }) => theme.bg.main};
+  padding: 30px 110px;
+  background: ${({ theme }) => theme.color.black_1};
 `;
 
 const StyledWrap = styled.div`
@@ -22,7 +23,7 @@ const StyledFooter = styled.div`
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
-  color: ${({ theme }) => theme.color.fourth};
+  color: ${({ theme }) => theme.color.gray_4};
   margin-top: 25px;
 `
 
@@ -31,11 +32,13 @@ export const Dashboard = (): JSX.Element => {
     <StyledDashboard>
       <TempList />
 
-      <StyledWrap>
-        <WeatherListCard />
-      </StyledWrap>
+      <Suspense fallback={<div>Loading...</div>}>
+        <StyledWrap>
+          <WeatherListCard />
+        </StyledWrap>
 
-      <HighlightListCard />
+        <HighlightListCard />
+      </Suspense>
 
       <StyledFooter>Dzmitry Sazonov @ DevChallenges.io</StyledFooter>
     </StyledDashboard>

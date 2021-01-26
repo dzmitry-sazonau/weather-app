@@ -40,5 +40,12 @@ module.exports = {
     'import/no-cycle': 'off',
     'no-confusing-arrow': 'off',
     'implicit-arrow-linebreak': 'off',
+    'react/require-default-props': 'off',
+    'max-len': ["error", {
+      "code": 120,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreRegExpLiterals": true
+    }]
   },
 };

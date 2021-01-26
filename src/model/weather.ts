@@ -1,5 +1,5 @@
 import { City } from './city';
-import { WeatherState } from './weatherState';
+import { WeatherState } from './weather-state';
 
 export interface Weather {
   id: number;
@@ -12,6 +12,7 @@ export interface Weather {
   wind_direction_compass: string;
   wind_speed: number;
   weather_state_abbr: WeatherState;
+  weather_state_name: string;
 }
 
 export interface MeteorologicalInformation extends City{

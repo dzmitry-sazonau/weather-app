@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from '../configure-store';
 import { Weather } from '../../model/weather';
 import { TemperatureType } from '../../model/temperature-type';
+import { Loading } from '../../model/loading';
 
 export const getWeathersWithoutActive = createSelector(
   [
@@ -16,3 +17,5 @@ export const getWeathersWithoutActive = createSelector(
 export const getActiveTemp = (state: RootState): TemperatureType => state.weatherSlice.temperature;
 
 export const getActiveWeather = (state: RootState): Weather => state.weatherSlice.activeWeather;
+
+export const getWeatherLoader = (state: RootState): Loading => state.weatherSlice.weatherLoader;

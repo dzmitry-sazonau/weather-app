@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Highlight, HighlightType } from '../../model/highlight';
-import { Sidebar } from '../Sidebar/Sidebar';
 import { Slider } from '../shared/Slider';
 
 interface HighlightCardProps {
@@ -15,7 +14,7 @@ interface StyledCardProps {
 const StyledCard = styled.div<StyledCardProps>`
   height: ${(props) => props.default ? '160px' : '204px'};
   width: 360px;
-  background: ${({ theme }) => theme.bg.card};
+  background: ${({ theme }) => theme.color.black_3};
   padding: 22px;
   display: flex;
   flex-direction: column;
