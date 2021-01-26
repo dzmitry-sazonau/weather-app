@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Dashboard } from './Dashboard/Dashboard';
 import { Sidebar } from './Sidebar/Sidebar';
-import useWeatherDataInitialize from '../hooks/useWeatherDataInitialize';
+import useWeatherInitialize from '../hooks/useWeatherInitialize';
 import { Loader } from './shared/Loader';
+import useCityInitialize from '../hooks/useCityInitialize';
 
 const StyledWrap = styled.div`
   height: 100%;
@@ -19,7 +20,9 @@ const StyledLoaderWrap = styled.div`
 `
 
 export default (): JSX.Element => {
-  const isDataLoaded = useWeatherDataInitialize();
+  const cityLoaded = useCityInitialize()
+  const weatherLoaded = useWeatherInitialize();
+  const isDataLoaded = cityLoaded && weatherLoaded;
 
   return (
     <>

@@ -1,19 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchWeather } from '../store/effects/weather';
-import { fetchCity } from '../store/effects/city';
 import { getWeatherLoader } from '../store/selectors/weather';
 import { Loading } from '../model/loading';
-import { getActiveCity, getCityLoader, getCurrentLattlong } from '../store/selectors/city';
-import useLocation from './useLocation';
+import { getActiveCity, getCityLoader } from '../store/selectors/city';
 
-export default function useWeatherDataInitialize(): boolean {
-  useLocation();
+export default function useWeatherInitialize(): boolean {
   const dispatch = useDispatch();
   const weatherLoader = useSelector(getWeatherLoader);
   const cityLoader = useSelector(getCityLoader);
   const activeCity = useSelector(getActiveCity);
-  const lattlong = useSelector(getCurrentLattlong);
 
   useEffect(() => {
     if (cityLoader === Loading.succeeded) {
@@ -21,11 +17,5 @@ export default function useWeatherDataInitialize(): boolean {
     }
   }, [dispatch, cityLoader, activeCity]);
 
-  useEffect(() => {
-    if (lattlong) {
-      dispatch(fetchCity({ lattlong }))
-    }
-  }, [dispatch, lattlong])
-
-  return cityLoader === Loading.succeeded && weatherLoader === Loading.succeeded
+  return weatherLoader === Loading.succeeded
 }
