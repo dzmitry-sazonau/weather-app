@@ -20,6 +20,11 @@ body,
   color: #E7E7EB;
 }
 
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #616475;
+  opacity: 1; /* Firefox */
+}
 
 button {
   border: none;

@@ -34,8 +34,10 @@ const city = createSlice({
         state.cityLoader = Loading.pending;
       })
       .addCase(fetchCity.fulfilled, (state, action) => {
-        [state.activeCity] = action.payload;
-        state.cities = action.payload;
+        if (action.payload.length) {
+          [state.activeCity] = action.payload;
+          state.cities = action.payload;
+        }
         state.cityLoader = Loading.succeeded;
       })
   }
