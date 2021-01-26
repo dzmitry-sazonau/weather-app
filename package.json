@@ -56,5 +56,6 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "redux-devtools-extension": "^2.13.8"
-  }
+  },
+  "proxy": "https://www.metaweather.com/api/"
 }
