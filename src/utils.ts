@@ -23,4 +23,10 @@ export const temperatures: Temperature[] = [
   }
 ];
 
+export const defineLocations = (successCallback: (latitude: number, longitude: number) => void): void => {
+  navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+    successCallback(latitude, longitude);
+  })
+}
+
 export const celsiusToFahrenheit = (celsius: number): number => (celsius * (9 / 5)) + 32;

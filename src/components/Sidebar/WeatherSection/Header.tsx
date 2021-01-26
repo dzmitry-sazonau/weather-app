@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { Button } from '../../shared/Button';
 import { LocationButton } from '../../shared/LocationButton';
 import { setCitiesCondition } from '../../../store/slices/sidebar';
+import { setLocation } from '../../../store/slices/city';
+import { defineLocations } from '../../../utils';
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -19,7 +21,11 @@ export const Header = (): JSX.Element => {
   return (
     <StyledHeader>
       <Button label="Search for places" handle={() => dispatch(setCitiesCondition())} />
-      <LocationButton handle={() => {}} />
+      <LocationButton
+        handle={() => {
+          defineLocations((latitude, longitude) => dispatch(setLocation(`${latitude}, ${longitude}`)));
+        }}
+      />
     </StyledHeader>
   )
 }
