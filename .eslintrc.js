@@ -40,5 +40,6 @@ module.exports = {
     'import/no-cycle': 'off',
     'no-confusing-arrow': 'off',
     'implicit-arrow-linebreak': 'off',
+    'react/require-default-props': 'off'
   },
 };
