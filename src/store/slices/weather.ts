@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Loading } from '../../model/loading';
 import { fetchWeather } from '../effects/weather';
 import { Weather } from '../../model/weather';
@@ -26,6 +26,9 @@ const weather = createSlice({
       state.temperature = state.temperature === TemperatureType.celsius
         ? TemperatureType.fahrenheit
         : TemperatureType.celsius;
+    },
+    changeActiveWeather(state, action: PayloadAction<Weather['id']>) {
+      state.activeWeather = state.weathers.find((item) => item.id === action.payload) || {} as Weather;
     }
   },
   extraReducers: (builder) => {
@@ -43,6 +46,6 @@ const weather = createSlice({
 
 const { reducer, actions } = weather;
 
-export const { toggleTemperature } = actions
+export const { toggleTemperature, changeActiveWeather } = actions
 
 export default reducer;

@@ -27,6 +27,7 @@ export default function WeatherListCard(): JSX.Element {
       }) => (
         <WeatherCard
           key={id}
+          id={id}
           maxTemp={max_temp}
           minTemp={min_temp}
           date={applicable_date}

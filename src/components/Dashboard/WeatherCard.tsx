@@ -1,17 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import useCircumstanceOfTime from '../../hooks/useСircumstanceOfTime';
+import useFormattedDate from '../../hooks/useFormattedDate';
 import useTemperature from '../../hooks/useTemperature';
 import useWeatherImage from '../../hooks/useWeatherImage';
 import { WeatherState } from '../../model/weather-state';
 import { getActiveTemp } from '../../store/selectors/weather';
+import { changeActiveWeather } from '../../store/slices/weather';
 
 interface StyledTempProps {
   second?: boolean;
 }
 
 interface WeatherCardProps {
+  id: number
   maxTemp: number;
   minTemp: number;
   date: string;
@@ -26,7 +28,12 @@ const StyledCard = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 18px 22px;
+  cursor: pointer;
   background: ${(props) => props.theme.color.black_3};
+
+  :hover {
+    background: ${(props) => props.theme.color.gray_5};
+  }
 `;
 
 const StyledDate = styled.div`
@@ -51,16 +58,17 @@ const StyledTemp = styled.div<StyledTempProps>`
 `;
 
 export const WeatherCard = ({
-  maxTemp, minTemp, date, weatherState
+  maxTemp, minTemp, date, weatherState, id
 }: WeatherCardProps): JSX.Element => {
+  const dispatch = useDispatch();
   const activeTempType = useSelector(getActiveTemp);
-  const formattedDate = useCircumstanceOfTime(date);
+  const formattedDate = useFormattedDate(date);
   const url = useWeatherImage(weatherState);
   const [,,formattedMaxTempWithUnit] = useTemperature(maxTemp, activeTempType);
   const [,,formattedMinTempWithUnit] = useTemperature(minTemp, activeTempType);
 
   return (
-    <StyledCard>
+    <StyledCard onClick={() => dispatch(changeActiveWeather(id))}>
       <StyledDate>{formattedDate}</StyledDate>
       <StyledImage src={url} />
       <StyledWrapTemp>
