@@ -10,6 +10,8 @@ const StyledCitiesSection = styled.div`
   width: 100%;
   height: 100%;
   padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledHeader = styled.div`
@@ -20,6 +22,10 @@ const StyledHeader = styled.div`
 
 const StyledWrapForSection = styled.div`
   margin-top: 50px;
+`
+
+const StyledWrapForCitiesList = styled(StyledWrapForSection)`
+  overflow: auto;
 `
 
 const StyledWrapForCross = styled.div`
@@ -41,9 +47,9 @@ export const CitiesSection = (): JSX.Element => {
         <Search />
       </StyledWrapForSection>
 
-      <StyledWrapForSection>
+      <StyledWrapForCitiesList>
         <CitiesList />
-      </StyledWrapForSection>
+      </StyledWrapForCitiesList>
     </StyledCitiesSection>
   )
 }

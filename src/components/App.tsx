@@ -5,12 +5,18 @@ import { Sidebar } from './Sidebar/Sidebar';
 import useWeatherInitialize from '../hooks/useWeatherInitialize';
 import { Loader } from './shared/Loader';
 import useCityInitialize from '../hooks/useCityInitialize';
+import { breakpoints } from '../breakpoints';
 
 const StyledWrap = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
+
+  ${breakpoints.md} { 
+    flex-direction: column;
+    overflow: auto;
+  }
 `
 
 const StyledLoaderWrap = styled.div`

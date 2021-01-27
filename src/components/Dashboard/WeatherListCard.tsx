@@ -3,10 +3,18 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { WeatherCard } from './WeatherCard';
 import { getWeathersWithoutActive } from '../../store/selectors/weather';
+import { breakpoints } from '../../breakpoints';
 
 const StyledListCard = styled.div`
   display: flex;
   justify-content: space-between;
+  
+   ${breakpoints.xl} {
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 25px;
+      row-gap: 25px;
+  }
 `
 
 export default function WeatherListCard(): JSX.Element {

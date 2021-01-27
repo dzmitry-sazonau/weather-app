@@ -10,6 +10,9 @@ import { Body } from './Body';
 const StyledWeatherSection = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const StyledWeatherStateWrap = styled.div`
@@ -17,7 +20,6 @@ const StyledWeatherStateWrap = styled.div`
 `
 
 const StyledCloudBackground = styled.div`
-  width: 460px;
   height: 376px;
   background: url(${cloudBg}) no-repeat center center;
   opacity: .3;
@@ -26,8 +28,9 @@ const StyledCloudBackground = styled.div`
 const StyledImage = styled.img`
   position: absolute;
   height: 160px;
-  top: 30%;
-  right: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const WeatherSection = (): JSX.Element => {

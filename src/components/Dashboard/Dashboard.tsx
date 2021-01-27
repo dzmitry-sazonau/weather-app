@@ -1,21 +1,50 @@
 import React, { Suspense, lazy } from 'react';
 import styled from 'styled-components';
 import { TempList } from './TempList';
+import { breakpoints } from '../../breakpoints';
 
 const WeatherListCard = lazy(() => import('./WeatherListCard'));
 const HighlightListCard = lazy(() => import('./HighlightListCard'));
 
-const StyledDashboard = styled.div`
+const StyledDashboardWrap = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 30px 110px;
+  padding: 30px 0;
   background: ${({ theme }) => theme.color.black_1};
+
+  ${breakpoints.xxl} {
+    padding: 30px 0;
+  }
+
+  ${breakpoints.xl} { 
+    overflow: auto;
+  }
+
+  ${breakpoints.md} { 
+    overflow: unset;
+    height: unset;
+  }
 `;
 
-const StyledWrap = styled.div`
+const StyledDashboard = styled.div`
+  max-width: 750px;
+  margin: 0 auto;
+  
+  ${breakpoints.xl} { 
+    margin: 0;
+  }
+`
+
+const StyledWrapWeatherList = styled.div`
   margin-top: 25px;
+  
+  ${breakpoints.xl} { 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
 `
 
 const StyledFooter = styled.div`
@@ -29,18 +58,20 @@ const StyledFooter = styled.div`
 
 export const Dashboard = (): JSX.Element => {
   return (
-    <StyledDashboard>
-      <TempList />
+    <StyledDashboardWrap>
+      <StyledDashboard>
+        <TempList />
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <StyledWrap>
-          <WeatherListCard />
-        </StyledWrap>
+        <Suspense fallback={<div>Loading...</div>}>
+          <StyledWrapWeatherList>
+            <WeatherListCard />
+          </StyledWrapWeatherList>
 
-        <HighlightListCard />
-      </Suspense>
+          <HighlightListCard />
+        </Suspense>
 
-      <StyledFooter>Dzmitry Sazonov @ DevChallenges.io</StyledFooter>
-    </StyledDashboard>
+        <StyledFooter>Dzmitry Sazonov @ DevChallenges.io</StyledFooter>
+      </StyledDashboard>
+    </StyledDashboardWrap>
   )
 }
