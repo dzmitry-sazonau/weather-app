@@ -4,6 +4,7 @@ import { fetchWeather } from '../store/effects/weather';
 import { getWeatherLoader } from '../store/selectors/weather';
 import { Loading } from '../model/loading';
 import { getActiveCity, getCityLoader } from '../store/selectors/city';
+import { setWeatherCondition } from '../store/slices/sidebar';
 
 export default function useWeatherInitialize(): boolean {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ export default function useWeatherInitialize(): boolean {
   useEffect(() => {
     if (cityLoader === Loading.succeeded) {
       dispatch(fetchWeather())
+      dispatch(setWeatherCondition())
     }
   }, [dispatch, cityLoader, activeCity]);
 
