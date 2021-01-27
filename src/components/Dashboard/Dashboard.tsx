@@ -5,7 +5,7 @@ import { TempList } from './TempList';
 const WeatherListCard = lazy(() => import('./WeatherListCard'));
 const HighlightListCard = lazy(() => import('./HighlightListCard'));
 
-const StyledDashboard = styled.div`
+const StyledDashboardWrap = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -14,7 +14,12 @@ const StyledDashboard = styled.div`
   background: ${({ theme }) => theme.color.black_1};
 `;
 
-const StyledWrap = styled.div`
+const StyledDashboard = styled.div`
+  max-width: 750px;
+  margin: 0 auto;
+`
+
+const StyledWrapWeatherList = styled.div`
   margin-top: 25px;
 `
 
@@ -29,18 +34,20 @@ const StyledFooter = styled.div`
 
 export const Dashboard = (): JSX.Element => {
   return (
-    <StyledDashboard>
-      <TempList />
+    <StyledDashboardWrap>
+      <StyledDashboard>
+        <TempList />
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <StyledWrap>
-          <WeatherListCard />
-        </StyledWrap>
+        <Suspense fallback={<div>Loading...</div>}>
+          <StyledWrapWeatherList>
+            <WeatherListCard />
+          </StyledWrapWeatherList>
 
-        <HighlightListCard />
-      </Suspense>
+          <HighlightListCard />
+        </Suspense>
 
-      <StyledFooter>Dzmitry Sazonov @ DevChallenges.io</StyledFooter>
-    </StyledDashboard>
+        <StyledFooter>Dzmitry Sazonov @ DevChallenges.io</StyledFooter>
+      </StyledDashboard>
+    </StyledDashboardWrap>
   )
 }
