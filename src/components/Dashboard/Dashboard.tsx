@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import styled from 'styled-components';
 import { TempList } from './TempList';
+import { breakpoints } from '../../breakpoints';
 
 const WeatherListCard = lazy(() => import('./WeatherListCard'));
 const HighlightListCard = lazy(() => import('./HighlightListCard'));
@@ -10,17 +11,40 @@ const StyledDashboardWrap = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 30px 110px;
+  padding: 30px 0;
   background: ${({ theme }) => theme.color.black_1};
+
+  ${breakpoints.xxl} {
+    padding: 30px 0;
+  }
+
+  ${breakpoints.xl} { 
+    overflow: auto;
+  }
+
+  ${breakpoints.md} { 
+    overflow: unset;
+    height: unset;
+  }
 `;
 
 const StyledDashboard = styled.div`
   max-width: 750px;
   margin: 0 auto;
+  
+  ${breakpoints.xl} { 
+    margin: 0;
+  }
 `
 
 const StyledWrapWeatherList = styled.div`
   margin-top: 25px;
+  
+  ${breakpoints.xl} { 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
 `
 
 const StyledFooter = styled.div`
