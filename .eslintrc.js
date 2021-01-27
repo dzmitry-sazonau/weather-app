@@ -34,5 +34,18 @@ module.exports = {
     'arrow-body-style': 'off',
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/semi': 'off',
+    'no-console': 'off',
+    'import/no-cycle': 'off',
+    'no-confusing-arrow': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'react/require-default-props': 'off',
+    'max-len': ["error", {
+      "code": 120,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreRegExpLiterals": true
+    }]
   },
 };
