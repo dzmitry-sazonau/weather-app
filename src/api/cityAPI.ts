@@ -6,6 +6,5 @@ export async function getCityByOption(option: CityOptions): Promise<AxiosRespons
   const key = Object.keys(option)[0];
   const url = `location/search/?${key}=${option[key]}`;
 
-  const response = await axios.get<any>(url);
-  return response;
+  return axios.get<any>(url);
 }

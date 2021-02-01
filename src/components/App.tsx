@@ -13,6 +13,7 @@ export default (): JSX.Element => (
       <Route exact path="/">
         <WeatherPage />
       </Route>
+
       <Route path="*">
         <Redirect to="/" />
       </Route>
