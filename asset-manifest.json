@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/weahter-app/static/css/main.8fa14080.chunk.css",
+    "main.js": "/weahter-app/static/js/main.cce47102.chunk.js",
+    "main.js.map": "/weahter-app/static/js/main.cce47102.chunk.js.map",
+    "runtime-main.js": "/weahter-app/static/js/runtime-main.ccd3187a.js",
+    "runtime-main.js.map": "/weahter-app/static/js/runtime-main.ccd3187a.js.map",
+    "static/js/2.6a1b524a.chunk.js": "/weahter-app/static/js/2.6a1b524a.chunk.js",
+    "static/js/2.6a1b524a.chunk.js.map": "/weahter-app/static/js/2.6a1b524a.chunk.js.map",
+    "static/js/3.00e5c11f.chunk.js": "/weahter-app/static/js/3.00e5c11f.chunk.js",
+    "static/js/3.00e5c11f.chunk.js.map": "/weahter-app/static/js/3.00e5c11f.chunk.js.map",
+    "static/js/4.71b6c50d.chunk.js": "/weahter-app/static/js/4.71b6c50d.chunk.js",
+    "static/js/4.71b6c50d.chunk.js.map": "/weahter-app/static/js/4.71b6c50d.chunk.js.map",
+    "index.html": "/weahter-app/index.html",
+    "static/css/main.8fa14080.chunk.css.map": "/weahter-app/static/css/main.8fa14080.chunk.css.map",
+    "static/js/2.6a1b524a.chunk.js.LICENSE.txt": "/weahter-app/static/js/2.6a1b524a.chunk.js.LICENSE.txt",
+    "static/media/clear.6e4f36b6.png": "/weahter-app/static/media/clear.6e4f36b6.png",
+    "static/media/cloud-background.f88244c2.png": "/weahter-app/static/media/cloud-background.f88244c2.png",
+    "static/media/lightCloud.edc43777.png": "/weahter-app/static/media/lightCloud.edc43777.png",
+    "static/media/showers.ea1e199a.png": "/weahter-app/static/media/showers.ea1e199a.png",
+    "static/media/sleet.6ef96c5a.png": "/weahter-app/static/media/sleet.6ef96c5a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ccd3187a.js",
+    "static/js/2.6a1b524a.chunk.js",
+    "static/css/main.8fa14080.chunk.css",
+    "static/js/main.cce47102.chunk.js"
+  ]
+}
