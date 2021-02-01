@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { WeatherSection } from './WeatherSection/WeatherSection';
 import { CitiesSection } from './CitiesSection/CitiesSection';
-import { getActiveSidebarCondition } from '../../store/selectors/sidebar';
-import { SidebarCondition } from '../../model/sidebar-сondition';
-import { breakpoints } from '../../breakpoints';
+import { getActiveSidebarCondition } from '../../../store/selectors/sidebar';
+import { SidebarCondition } from '../../../model/sidebar-сondition';
+import { breakpoints } from '../../../breakpoints';
 
 const StyledSidebar = styled.div`
   display: flex;

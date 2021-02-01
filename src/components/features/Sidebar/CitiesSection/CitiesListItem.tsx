@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { setActiveCity } from '../../../store/slices/city';
-import { ArrowRight } from '../../shared/icon/ArrowRight';
-import { getIsActiveCity } from '../../../store/selectors/city';
+import { setActiveCity } from '../../../../store/slices/city';
+import { ArrowRight } from '../../../shared/icon/ArrowRight';
+import { getIsActiveCity } from '../../../../store/selectors/city';
 
 interface CitiesListItemProps {
   title: string;

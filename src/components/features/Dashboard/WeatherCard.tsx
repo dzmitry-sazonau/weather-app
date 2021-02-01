@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import useFormattedDate from '../../hooks/useFormattedDate';
-import useTemperature from '../../hooks/useTemperature';
-import useWeatherImage from '../../hooks/useWeatherImage';
-import { WeatherState } from '../../model/weather-state';
-import { getActiveTemp } from '../../store/selectors/weather';
-import { changeActiveWeather } from '../../store/slices/weather';
+import useFormattedDate from '../../../hooks/useFormattedDate';
+import useTemperature from '../../../hooks/useTemperature';
+import useWeatherImage from '../../../hooks/useWeatherImage';
+import { WeatherState } from '../../../model/weather-state';
+import { getActiveTemp } from '../../../store/selectors/weather';
+import { changeActiveWeather } from '../../../store/slices/weather';
 
 interface StyledTempProps {
   second?: boolean;

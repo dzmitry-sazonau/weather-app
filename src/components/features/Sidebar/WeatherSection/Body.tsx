@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { getActiveTemp, getActiveWeather } from '../../../store/selectors/weather';
-import useTemperature from '../../../hooks/useTemperature';
-import { getActiveCity } from '../../../store/selectors/city';
-import { Pin } from '../../shared/icon/Pin';
-import useFormattedDate from '../../../hooks/useFormattedDate';
+import { getActiveTemp, getActiveWeather } from '../../../../store/selectors/weather';
+import useTemperature from '../../../../hooks/useTemperature';
+import { getActiveCity } from '../../../../store/selectors/city';
+import { Pin } from '../../../shared/icon/Pin';
+import useFormattedDate from '../../../../hooks/useFormattedDate';
 
 const StyledBody = styled.div`
   width: 100%;

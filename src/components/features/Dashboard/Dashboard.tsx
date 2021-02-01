@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import styled from 'styled-components';
 import { TempList } from './TempList';
-import { breakpoints } from '../../breakpoints';
+import { breakpoints } from '../../../breakpoints';
 
 const WeatherListCard = lazy(() => import('./WeatherListCard'));
 const HighlightListCard = lazy(() => import('./HighlightListCard'));

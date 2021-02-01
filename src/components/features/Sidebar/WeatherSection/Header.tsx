@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { Button } from '../../shared/Button';
-import { LocationButton } from '../../shared/LocationButton';
-import { setCitiesCondition } from '../../../store/slices/sidebar';
-import { setLocation } from '../../../store/slices/city';
-import { defineLocations } from '../../../utils';
+import { Button } from '../../../shared/Button';
+import { LocationButton } from '../../../shared/LocationButton';
+import { setCitiesCondition } from '../../../../store/slices/sidebar';
+import { setLocation } from '../../../../store/slices/city';
+import { defineLocations } from '../../../../utils';
 
 const StyledHeader = styled.div`
   width: 100%;

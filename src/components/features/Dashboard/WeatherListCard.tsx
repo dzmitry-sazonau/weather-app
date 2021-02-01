@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { WeatherCard } from './WeatherCard';
-import { getWeathersWithoutActive } from '../../store/selectors/weather';
-import { breakpoints } from '../../breakpoints';
+import { getWeathersWithoutActive } from '../../../store/selectors/weather';
+import { breakpoints } from '../../../breakpoints';
 
 const StyledListCard = styled.div`
   display: flex;
