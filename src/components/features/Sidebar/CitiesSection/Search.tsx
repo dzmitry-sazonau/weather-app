@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { Button } from '../../shared/Button';
-import { fetchCity } from '../../../store/effects/city';
+import { Button } from '../../../shared/Button';
+import { fetchCity } from '../../../../store/effects/city';
 
 const StyledSearch = styled.div`
   display: flex;

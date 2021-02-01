@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { getActiveWeather } from '../../store/selectors/weather';
-import useHighlight from '../../hooks/useHighlight';
-import { Highlight } from '../../model/highlight';
+import { getActiveWeather } from '../../../store/selectors/weather';
+import useHighlight from '../../../hooks/useHighlight';
+import { Highlight } from '../../../model/highlight';
 import { HighlightCard } from './HighlightCard';
-import { breakpoints } from '../../breakpoints';
+import { breakpoints } from '../../../breakpoints';
 
 const Wrap = styled.div`
   width: 100%;

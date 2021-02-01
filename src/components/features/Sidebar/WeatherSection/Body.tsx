@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { getActiveTemp, getActiveWeather } from '../../../store/selectors/weather';
-import useCircumstanceOfTime from '../../../hooks/useСircumstanceOfTime';
-import useTemperature from '../../../hooks/useTemperature';
-import useFormattedDate from '../../../hooks/useFormattedDate';
-import { getActiveCity } from '../../../store/selectors/city';
-import { Pin } from '../../shared/icon/Pin';
+import { getActiveTemp, getActiveWeather } from '../../../../store/selectors/weather';
+import useTemperature from '../../../../hooks/useTemperature';
+import { getActiveCity } from '../../../../store/selectors/city';
+import { Pin } from '../../../shared/icon/Pin';
+import useFormattedDate from '../../../../hooks/useFormattedDate';
 
 const StyledBody = styled.div`
   width: 100%;
@@ -63,9 +62,7 @@ export const Body = (): JSX.Element => {
   const activeWeather = useSelector(getActiveWeather);
   const activeTemperature = useSelector(getActiveTemp);
   const activeCity = useSelector(getActiveCity)
-
-  const formattedDate = useFormattedDate(activeWeather.applicable_date);
-  const day = useCircumstanceOfTime(activeWeather.applicable_date);
+  const formattedDate = useFormattedDate(activeWeather.applicable_date, true);
   const [temp, unit] = useTemperature(activeWeather.max_temp, activeTemperature);
 
   return (
@@ -77,7 +74,7 @@ export const Body = (): JSX.Element => {
 
       <StyledWeatherState>{activeWeather.weather_state_name}</StyledWeatherState>
 
-      <StyledDate>{`${day} • ${formattedDate}`}</StyledDate>
+      <StyledDate>{formattedDate}</StyledDate>
 
       <StyledCity>
         <Pin />

@@ -21,7 +21,7 @@ export default function useHighlight(weather: Weather): Highlight[] {
     },
     {
       label: 'Air Pressure',
-      value: `${weather.air_pressure} mb`,
+      value: `${weather.air_pressure.toFixed()} mb`,
       type: HighlightType.default,
     },
   ]

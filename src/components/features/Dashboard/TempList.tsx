@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { temperatures } from '../../utils';
+import { temperatures } from '../../../utils';
 import { Temp } from './Temp';
-import { breakpoints } from '../../breakpoints';
+import { breakpoints } from '../../../breakpoints';
 
 const StyledTempList = styled.div`
   display: flex;

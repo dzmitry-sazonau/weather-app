@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { Cross } from '../../shared/icon/Cross';
+import { Cross } from '../../../shared/icon/Cross';
 import { Search } from './Search';
 import { CitiesList } from './CitiesList';
-import { setWeatherCondition } from '../../../store/slices/sidebar';
+import { setWeatherCondition } from '../../../../store/slices/sidebar';
 
 const StyledCitiesSection = styled.div`
   width: 100%;

@@ -1,3 +1,4 @@
+import { format, isToday, isTomorrow } from 'date-fns';
 import { Temperature } from './model/temperature';
 import { TemperatureType } from './model/temperature-type';
 
@@ -10,7 +11,7 @@ export const getItem = (key: string): any => {
   return JSON.parse(<string>localStorage.getItem(key))
 }
 
-export const standardFormatForDate = 'E, d LLL'
+export const standardFormat = 'E, d LLL'
 
 export const temperatures: Temperature[] = [
   {
@@ -27,6 +28,12 @@ export const defineLocations = (successCallback: (latitude: number, longitude: n
   navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
     successCallback(latitude, longitude);
   })
+}
+
+export const getDayName = (date: string): string => isToday(new Date(date)) ? 'Today' : isTomorrow(new Date(date)) ? 'Tomorrow' : ''
+
+export const getFormattedDate = (date: string, formatForDate = standardFormat): string => {
+  return format(new Date(date), formatForDate);
 }
 
 export const celsiusToFahrenheit = (celsius: number): number => (celsius * (9 / 5)) + 32;

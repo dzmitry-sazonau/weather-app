@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { getCities } from '../../../store/selectors/city';
+import { getCities } from '../../../../store/selectors/city';
 import { CitiesListItem } from './CitiesListItem';
 
 const StyledCitiesList = styled.div`

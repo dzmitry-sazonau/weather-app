@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { WeatherCard } from './WeatherCard';
-import { getWeathersWithoutActive } from '../../store/selectors/weather';
-import { breakpoints } from '../../breakpoints';
+import { getWeathersWithoutActive } from '../../../store/selectors/weather';
+import { breakpoints } from '../../../breakpoints';
 
 const StyledListCard = styled.div`
   display: flex;
@@ -27,6 +27,7 @@ export default function WeatherListCard(): JSX.Element {
       }) => (
         <WeatherCard
           key={id}
+          id={id}
           maxTemp={max_temp}
           minTemp={min_temp}
           date={applicable_date}

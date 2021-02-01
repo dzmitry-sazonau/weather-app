@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Highlight, HighlightType } from '../../model/highlight';
-import { Slider } from '../shared/Slider';
+import { Highlight, HighlightType } from '../../../model/highlight';
+import { Slider } from '../../shared/Slider';
 
 interface HighlightCardProps {
   highlight: Highlight;

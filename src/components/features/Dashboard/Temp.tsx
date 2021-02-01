@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
-import { toggleTemperature } from '../../store/slices/weather'
-import { Temperature } from '../../model/temperature';
-import { getActiveTemp } from '../../store/selectors/weather';
+import { toggleTemperature } from '../../../store/slices/weather'
+import { Temperature } from '../../../model/temperature';
+import { getActiveTemp } from '../../../store/selectors/weather';
 
 interface StyledTempProps {
   isActive: boolean;
