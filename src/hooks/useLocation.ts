@@ -9,7 +9,7 @@ export default function useLocation(): void {
 
   defineLocations((latitude, longitude) => {
     if (!location) {
-      dispatch(setLocation(`${latitude}, ${longitude}`))
+      dispatch(setLocation(`${latitude},${longitude}`))
     }
   });
 }

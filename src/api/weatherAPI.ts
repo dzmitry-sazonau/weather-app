@@ -3,7 +3,7 @@ import { City } from '../model/city';
 import { MeteorologicalInformation } from '../model/weather';
 
 export async function getWeather(city: City): Promise<AxiosResponse<MeteorologicalInformation>> {
-  const url = `location/${city.woeid}/`;
+  const url = `https://www.metaweather.com/api/location/${city.woeid}/`;
 
   return axios.get<any>(url);
 }
